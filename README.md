@@ -1,6 +1,6 @@
 # Enhancing Thai Sentiment Analysis with WangChanBERTa using Typhoon-Generated Synthetic Data
 
-**Authors**: Github: lillion2003
+**Author**: Github: lillion2003
 
 This content presents the process of synthesizing data using LLM (Llama-3.1 and Typhoon 2) and compares different data synthesis approaches to determine which method most effectively improves sentiment classification performance when fine-tuning the WangChanBERTa model.
 
