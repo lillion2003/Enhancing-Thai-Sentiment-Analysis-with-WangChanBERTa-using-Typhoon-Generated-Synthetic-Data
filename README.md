@@ -114,13 +114,15 @@ The Rewriting Augmentation method uses a fixed 4x synthesis ratio based on previ
 
 **Prompt Method:** The Prompt-based approach generates entirely new reviews without relying on existing examples, producing diverse text that resembles real reviews while introducing novel patterns and expressions. This diversity helps the WangChanBERTa model learn new linguistic features and generalize better to unseen data. Notably, this method significantly improves the prediction performance for the negative class (F1-score: 77.66% → 79.77%), addressing the class imbalance problem effectively.
 
-**Rewritten Method:** In contrast, the Rewritten Method actually performs slightly worse than the baseline (Macro F1-score: 88.00% vs 88.11%). Rewritten reviews tend to maintain similar structures and vocabulary to the original texts, which does not provide sufficient diversity for the model to learn new patterns. This approach may even introduce noise that degrades performance, particularly for the negative class (F1-score: 77.45% vs 77.66% baseline).
+**Rewritten Method:** In contrast, the Rewritten Method performs slightly worse than the baseline (Macro F1-score: 88.00% vs. 88.11%). Rewritten reviews tend to preserve similar structures and vocabulary to the original texts, providing limited additional diversity for the model to learn new patterns. As a result, this method does not improve performance compared to the baseline, particularly for the negative class (F1-score: 77.45% vs. 77.66% at baseline).
 
 **Mixed Method:** The Mixed Method produces the most interesting results, achieving the highest performance (Macro F1-score: 90.98%). This approach appears to strike an optimal balance between diversity (from Prompt-generated reviews) and similarity to the original data distribution (from Rewritten reviews). This balanced approach enables WangChanBERTa to achieve the highest F1-score in experiment 2, with particularly strong improvements in negative class prediction (F1-score: 77.66% → 83.01%).
 
 ### Recommendations & Next Steps
 
 - The trained model can be deployed to classify new restaurant reviews into positive or negative sentiment, and the same approach can be extended to other domains with similar sentiment analysis tasks.
+- Future work should explore identifying the optimal synthesis ratio for the Rewritten Method to achieve a more comprehensive comparison of augmentation effectiveness across methods.
+
 
 ### Project Structure
 
