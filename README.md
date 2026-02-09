@@ -52,9 +52,10 @@ Removes 3-star reviews (neutral sentiment) and keeps only clear positive (4-5 st
 - Modern LLM demonstrate exceptional text generation capabilities, producing coherent and contextually appropriate content
 - Typhoon 2 is specifically optimized for Thai language tasks, making it particularly suitable for generating Thai restaurant reviews
 
-**Rewriting Method:** The model receives a prompt containing an example review and generates a new version by rewriting the original text while preserving the same sentiment. Based on prior research, this method synthesizes data at a 4x ratio (4 times the original data size).
+**Rewriting Method:** The model receives a prompt containing an example review and generates a new version by rewriting the original text while preserving the same sentiment. This method applies a fixed synthesis ratio of 4x (four times the original data size), as adopted from relevant research on synthetic data augmentation.
 
-**Prompt Method:** The model receives only sentiment-based instructions without any example reviews and generates entirely new reviews from scratch according to the specified sentiment. The optimal synthesis ratio for this method is determined through [Experiment 1](#experiment-1-determining-optimal-prompt-method-synthesis-ratio), testing ratios from 1x to 4x.
+**Prompt Method:** The model receives only sentiment-based instructions without any example reviews and generates entirely new reviews from scratch according to the specified sentiment. The optimal synthesis ratio for this method is determined through Experiment 1
+, testing ratios from 1x to 4x to systematically investigate the implementation of the Prompt Method for data synthesis.
 
 **Mixed Method:** The synthetic dataset is created by integrating rewritten reviews and fully prompt-generated reviews into a single augmented dataset. This method combines the 4x Rewritten data with the optimal Prompt synthesis ratio identified in [Experiment 1](#experiment-1-determining-optimal-prompt-method-synthesis-ratio).
 
@@ -98,6 +99,10 @@ This experiment compares four different data configurations for training the sen
 ### Results
 
 See detailed performance metrics and comparison in [Results Comparison](Results%20Comparison.md).
+
+### Limitation
+
+The Rewriting Augmentation method uses a fixed 4x synthesis ratio based on previous studies. However, prior research does not clearly state what ratio should be used for the Prompt Method. Therefore, the Prompt Method was tested to find the best ratio before comparison. This may make the comparison less fair, since only the Prompt Method was optimized. However, this study mainly focuses on comparing the overall performance of each method, with special attention to the Prompt Method, as this study aims to examine how effectively a large language model (LLM) can synthesize Thai reviews using prompts alone, without being provided with any example reviews.
 
 ### Key Findings
 
