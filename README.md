@@ -81,7 +81,9 @@ Sentiment classification is performed using WangchanBERTa, a pre-trained Thai la
 
 - **Class Weight Training:** Fine-tuned with weighted cross-entropy loss 
 
-- **Sequential Augmentation Training:** During each training update within an epoch, the model first performs backpropagation on a minibatch of real data, followed by backpropagation on a randomly sampled minibatch of synthetic data. This approach follows a research-based augmentation strategy. ***Reference below***
+- **Sequential Augmentation Training:** During each training update within an epoch, the model first performs backpropagation on a minibatch of real data, followed by backpropagation on a randomly sampled minibatch of synthetic data. This approach follows a research-based augmentation strategy. 
+
+***This approach is adapted from the synthetic-data fine-tuning strategy described in the study below.***
 
 https://www.mdpi.com/2079-9292/13/13/2535 [Page 4, Section 2.3.2]
 
