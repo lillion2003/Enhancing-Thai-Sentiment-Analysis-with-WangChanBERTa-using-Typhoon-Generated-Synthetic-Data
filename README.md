@@ -11,7 +11,7 @@ This content presents the process of synthesizing data using LLM (Llama 3.1-Typh
 - [Data](#data)
 - [Methods](#methods)
 - [Tools](#tools)
-- [Sentiment Analysis Model](sentiment-analysis-model)
+- [Sentiment Analysis Model](#sentiment-analysis-model)
 - [Experiment 1: Determining Optimal Prompt Method Synthesis Ratio](#experiment-1-determining-optimal-prompt-method-synthesis-ratio)
 - [Experiment 2: Comparing Data Synthesis Approaches](#experiment-2-comparing-data-synthesis-approaches)
 - [Results](#results)
