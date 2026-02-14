@@ -9,8 +9,9 @@ This content presents the process of synthesizing data using LLM (Llama 3.1-Typh
 - [Problem](#problem)
 - [Objective](#objective)
 - [Data](#data)
-- [Methods (Principles and Analysis Methods)](#methods-principles-and-analysis-methods)
+- [Methods](#methods)
 - [Tools](#tools)
+- [Sentiment Analysis Model](sentiment-analysis-model)
 - [Experiment 1: Determining Optimal Prompt Method Synthesis Ratio](#experiment-1-determining-optimal-prompt-method-synthesis-ratio)
 - [Experiment 2: Comparing Data Synthesis Approaches](#experiment-2-comparing-data-synthesis-approaches)
 - [Results](#results)
@@ -71,6 +72,18 @@ Removes 3-star reviews (neutral sentiment) and keeps only clear positive (4-5 st
   - **Scikit-learn:** Employed for data splitting (train/test/validation), calculating evaluation metrics (F1-score, Precision, Recall), and computing class weights.
   - **Datasets (Hugging Face):** Used to load the Wongnai Review (2025) dataset.
   - **Matplotlib / Seaborn:** Used for visualizing confusion matrices.
+
+### Sentiment Analysis Model
+
+**Classification Model:**  
+
+Sentiment classification is performed using WangchanBERTa, a pre-trained Thai language model fine-tuned for binary sentiment classification (positive vs. negative).
+
+- **Class Weight Training:** Fine-tuned with weighted cross-entropy loss 
+
+- **Sequential Augmentation Training:** During each training update within an epoch, the model first performs backpropagation on a minibatch of real data, followed by backpropagation on a randomly sampled minibatch of synthetic data. This approach follows a research-based augmentation strategy. ***Reference below***
+
+https://www.mdpi.com/2079-9292/13/13/2535 [Page 4, Section 2.3.2]
 
 ### Experiment 1: Determining Optimal Prompt Method Synthesis Ratio
 
